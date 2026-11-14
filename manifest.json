@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Gaoxiaobang Playback Helper",
+  "version": "1.0.0",
+  "description": "User-controlled background playback and playback speed for Gaoxiaobang HTML5 videos.",
+  "minimum_chrome_version": "111",
+  "permissions": ["storage"],
+  "icons": { "16": "assets/icon-16.png", "48": "assets/icon-48.png", "128": "assets/icon-128.png" },
+  "action": {
+    "default_title": "Gaoxiaobang Playback Helper",
+    "default_icon": { "16": "assets/icon-16.png", "48": "assets/icon-48.png" },
+    "default_popup": "popup/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.gaoxiaobang.com/*"],
+      "js": ["src/page.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://*.gaoxiaobang.com/*"],
+      "js": ["src/bridge.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

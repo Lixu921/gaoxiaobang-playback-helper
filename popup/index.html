@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>高校邦播放助手</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header>
+      <img src="../assets/icon-48.png" width="36" height="36" alt="">
+      <div><h1>高校邦播放助手</h1><p>Playback Helper</p></div>
+    </header>
+    <main>
+      <form id="settings">
+        <label class="row primary" for="enabled"><span>启用扩展</span><input id="enabled" type="checkbox" role="switch"></label>
+        <fieldset id="options">
+          <label class="row" for="background"><span>后台播放</span><input id="background" type="checkbox" role="switch"></label>
+          <label class="row" for="lockRate"><span>锁定倍速</span><input id="lockRate" type="checkbox" role="switch"></label>
+          <label class="row" for="rate"><span>播放速度</span><select id="rate">
+            <option value="0.5">0.5 ×</option><option value="0.75">0.75 ×</option>
+            <option value="0.8">0.8 ×</option><option value="1">1.0 ×</option>
+            <option value="1.25">1.25 ×</option><option value="1.5">1.5 ×</option>
+            <option value="1.75">1.75 ×</option><option value="2">2.0 ×</option>
+          </select></label>
+        </fieldset>
+      </form>
+    </main>
+    <footer><span class="dot" aria-hidden="true"></span><output id="status" role="status" aria-live="polite">正在读取设置</output><span class="version">v1.0.0</span></footer>
+    <script src="popup.js"></script>
+  </body>
+</html>
